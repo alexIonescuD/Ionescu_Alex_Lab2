@@ -108,7 +108,7 @@ namespace Ionescu_Alex_Lab2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Author,Price")] Book book)
+        public async Task<IActionResult> Create([Bind("Title,AuthorID,Price")] Book book)
         {
             try
             {
@@ -120,11 +120,11 @@ namespace Ionescu_Alex_Lab2.Controllers
                 return RedirectToAction(nameof(Index));
             }
                 }
- catch (DbUpdateException /* ex*/)
- {
+             catch (DbUpdateException /* ex*/)
+             {
 
- ModelState.AddModelError("", "Unable to save changes. " +
- "Try again, and if the problem persists ");
+                   ModelState.AddModelError("", "Unable to save changes. " + 
+                       "Try again, and if the problem persists ");
  }
             return View(book);
         }
