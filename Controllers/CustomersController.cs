@@ -12,7 +12,7 @@ using System.Text;
 using Newtonsoft.Json;
 
 namespace Ionescu_Alex_Lab2.Controllers
-{
+{ }
     public class CustomersController : Controller
     {
         private readonly LibraryContext _context;
@@ -185,4 +185,3 @@ Customer customer)
           return (_context.Customers?.Any(e => e.CustomerID == id)).GetValueOrDefault();
         }
     }
-}
